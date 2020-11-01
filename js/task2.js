@@ -32,7 +32,7 @@ function getrSign() {
     }
 }
 function task2() {
-    let answ = (eval(str)).toFixed(1) ;
+    let answ = eval(str) ;
     let input = document.getElementById('t1').value;
     if(input == answ) {
         document.getElementById('str2').innerHTML = 'answer : ' + answ + ', your answer is right';
