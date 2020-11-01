@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        #cont{
+            width: 600px;
+            height: 600px;
+            position: fixed;
+        }
+        #cont > div{
+            float: left;
+            width: 60px;
+            height: 60px;
+        }
+        body{
+            background-attachment: scroll;
+            margin: 0px 10px 0px 10px;
+            background-color: #ffdbf1;
+            background-size: 1237px 1380px;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .btn{
+            background-color: thistle; align-items: center;
+            color: mintcream;
+            padding: 20px;
+            margin: 10px 50px;
+            border: none;
+            width: 25%;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 3px  4px 0 brown;
+
+        }
+        .btn:hover{ background-color: mediumvioletred}
+        form{
+            align-items: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="task1"><button class="btn" onclick="show()">show</button></h2>
+
+<script>
+    function show(){
+        setInterval(col, 1);
+    }
+    function col(){
+        document.body.insertAdjacentHTML('beforeend', '<div id="cont">'+'<div></div>'.repeat(100)+'</div>');
+        document.querySelectorAll('#cont>div').forEach(el=>{
+            el.style.backgroundColor = '#'+Math.random().toString(16).slice(2,8);
+        });
+        document.getElementById('task1').innerHTML = 'completed';
+    }
+</script>
+</body>
+</html>
